@@ -1,0 +1,22 @@
+<div class="col-md-4" ng-repeat="zona in main.zonas">
+  <div class="row" align="center">
+    <h1 ng-if="zona.estado === 'apagado' "><span   class="label label-default">{{zona.nombre}}</span></h1>
+    <h1 ng-if="zona.estado === 'activo' "  >
+        <i class="fa fa-bell fa-5x faa-shake animated" aria-hidden="true"></i>
+        <span  class="label label-success ">
+        {{zona.nombre}}
+    </span></h1>
+    <h1 ng-if="zona.estado === 'notificacion' "><span   class="label label-warning">{{zona.nombre}}</span></h1>
+  </div>
+</div>
+<div class="row" align="center">
+  <div class="col-md-3">
+    <input type="text" class="form-control" ng-model="main.nombre_zona" placeholder="Ingrese Zona">
+  </div>
+  <div class="col-md-3">
+    <input type="text" class="form-control" ng-model="main.estado_zona" placeholder="Ingrese Estado">
+  </div>
+  <div class="col-md-6">
+    <button type="button" ng-click="main.cambiar_estado()" class="btn btn-primary">Operar</button>
+  </div>
+</div>
